@@ -38,9 +38,9 @@ public class TechMageMod {
 					GameRegistry.register(wand, new ResourceLocation("techmage", wand.getUnlocalizedName()));
 					String wandDisplayName = wand.getSpell().getDisplayName();
 					if (wandDisplayName != SpellMetadataConstants.NONE) {
-						LanguageRegistry.instance().addStringLocalization(
+						/*LanguageRegistry.instance().addStringLocalization(
 								wand.getUnlocalizedName() + ".name", "en_US",
-								wandDisplayName);
+								wandDisplayName);*/
 					}
 				}
 		}

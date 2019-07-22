@@ -52,9 +52,9 @@ public class ArcaneArmory {
 				else if(script.isDirectory()){
 					String directoryName = script.getName();
 					String directoryNiceName = directoryName.substring(0, 1).toUpperCase() + directoryName.substring(1);
-					LanguageRegistry.instance().addStringLocalization(
+					/*LanguageRegistry.instance().addStringLocalization(
 							"itemGroup."+directoryName, "en_US",
-							directoryNiceName);
+							directoryNiceName);*/
 					addWands(script, new MinecraftPythonCreativeTab(directoryName, Items.BLAZE_ROD));
 				}
 			}
