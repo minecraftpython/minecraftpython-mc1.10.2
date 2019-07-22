@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.common.registry.LanguageRegistry;
 import org.sapphon.minecraft.modding.base.CommonProxy;
 import org.sapphon.minecraft.modding.base.ModConfigurationFlags;
 import org.sapphon.minecraft.modding.minecraftpython.ScriptLoaderConstants;
@@ -15,7 +14,7 @@ import org.sapphon.minecraft.modding.minecraftpython.ScriptLoaderConstants;
 @Mod(modid = TechMageMod.MODID, version = TechMageMod.VERSION, name = TechMageMod.MODID)
 public class TechMageMod {
 	public static final String MODID = "techmage";
-	public static final String VERSION = "1.8.8-0.2.0";
+	public static final String VERSION = "1.10.2-0.3.0";
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
