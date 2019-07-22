@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class CommandMPTeleport extends CommandMinecraftPythonServer {
 
 
 	public void doWork(){
-		WorldServer world = MinecraftServer.getServer().worldServerForDimension(0);
+		WorldServer world = FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(0);
 		List<EntityPlayer> players = new ArrayList<EntityPlayer>(world.playerEntities);
 		for (EntityPlayer entityPlayerMP : players) {
 			if(entityPlayerMP.getDisplayName().getUnformattedText().equals(teleportingPlayer)){

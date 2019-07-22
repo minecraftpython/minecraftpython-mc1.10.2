@@ -4,6 +4,7 @@ import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 public class CommandMPSpawnLightningBolt extends CommandMinecraftPythonServer {
 
@@ -14,7 +15,7 @@ public class CommandMPSpawnLightningBolt extends CommandMinecraftPythonServer {
 	
 	@Override
 	public void doWork() {
-		WorldServer world = MinecraftServer.getServer().worldServerForDimension(0);
+		WorldServer world = FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(0);
 			int x = -175;
 			int z = 60;
 			

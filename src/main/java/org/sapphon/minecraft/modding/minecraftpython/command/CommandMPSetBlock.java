@@ -8,6 +8,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import org.sapphon.minecraft.modding.base.BlockFinder;
 
 public class CommandMPSetBlock extends CommandMinecraftPythonServer {
@@ -43,7 +44,7 @@ public class CommandMPSetBlock extends CommandMinecraftPythonServer {
 	}
 
 	public void doWork() {
-		WorldServer worldserver = MinecraftServer.getServer()
+		WorldServer worldserver = FMLCommonHandler.instance().getMinecraftServerInstance()
 				.worldServerForDimension(0);// TODO
 		Block blocky = BlockFinder.getBlockWithName(blockType);
 		

@@ -7,6 +7,7 @@ import net.minecraft.nbt.NBTException;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 public class CommandMPSpawnEntity extends CommandMinecraftPythonServer {
 	public double x;
@@ -37,7 +38,7 @@ public class CommandMPSpawnEntity extends CommandMinecraftPythonServer {
 	}
 
 	public void doWork() {
-		MinecraftServer worldserver = MinecraftServer.getServer();
+		MinecraftServer worldserver = FMLCommonHandler.instance().getMinecraftServerInstance();
 		World world = worldserver.getEntityWorld();
 
 		Entity entity = EntityLookup.getEntityByName(this.nameOfEntityToSpawn,

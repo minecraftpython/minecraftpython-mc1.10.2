@@ -10,6 +10,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 public class CommandMPExecuteConsoleCommand extends
         CommandMinecraftPythonServer {
@@ -45,7 +46,7 @@ public class CommandMPExecuteConsoleCommand extends
         String[] astring = commandString.split(" ");
         String s1 = astring[0];
         astring = dropFirstString(astring);
-        ICommand icommand = MinecraftServer.getServer().getCommandManager().getCommands().get(s1);
+        ICommand icommand = FMLCommonHandler.instance().getMinecraftServerInstance().getCommandManager().getCommands().get(s1);
         int i = this.getUsernameIndex(icommand, astring);
         int j = 0;
 
@@ -96,7 +97,7 @@ public class CommandMPExecuteConsoleCommand extends
 	}
 
 	private EntityPlayer getPlayerByName(String name) {
-		return MinecraftServer.getServer().getEntityWorld().getPlayerEntityByName(name);
+		return FMLCommonHandler.instance().getMinecraftServerInstance().getEntityWorld().getPlayerEntityByName(name);
 	}
 
     private int getUsernameIndex(ICommand par1ICommand, String[] par2ArrayOfStr)

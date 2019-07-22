@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class CommandMPPropelEntity extends CommandMinecraftPythonServer {
 	}
 
 	public void doWork() {
-		World world = MinecraftServer.getServer().worldServerForDimension(0);
+		World world = FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(0);
 		List<Entity> list = new ArrayList<Entity>(world.loadedEntityList);
 		Entity toPropel = null;
 		for (Entity entity : list) {

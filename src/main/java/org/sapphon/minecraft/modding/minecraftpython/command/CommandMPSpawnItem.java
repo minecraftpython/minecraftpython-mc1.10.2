@@ -9,6 +9,7 @@ import net.minecraft.nbt.NBTException;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 public class CommandMPSpawnItem extends CommandMinecraftPythonServer {
 	private double x;
@@ -53,7 +54,7 @@ public class CommandMPSpawnItem extends CommandMinecraftPythonServer {
 
 	
 	public void doWork() {
-		WorldServer worldserver = MinecraftServer.getServer()
+		WorldServer worldserver = FMLCommonHandler.instance().getMinecraftServerInstance()
 				.worldServerForDimension(0);// TODO ONLY WORKS IN OVERWORLD FOR NOW
 		Item item = ItemLookup.getItemByName(name, worldserver);
 		EntityItem entityWrapperForTheItemWithoutAHandToHoldIt = new EntityItem(worldserver, x, y, z);
