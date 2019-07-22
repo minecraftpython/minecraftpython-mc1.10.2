@@ -8,8 +8,8 @@ import net.minecraft.command.EntitySelector;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 
 public class CommandMPExecuteConsoleCommand extends
         CommandMinecraftPythonServer {
@@ -76,8 +76,8 @@ public class CommandMPExecuteConsoleCommand extends
                         }
                         catch (CommandException commandexception)
                         {
-                            ChatComponentTranslation chatcomponenttranslation1 = new ChatComponentTranslation(commandexception.getMessage(), commandexception.getErrorObjects());
-                            chatcomponenttranslation1.getChatStyle().setColor(EnumChatFormatting.RED);
+                            TextComponentTranslation chatcomponenttranslation1 = new TextComponentTranslation(commandexception.getMessage(), commandexception.getErrorObjects());
+                            chatcomponenttranslation1.getStyle().setColor(TextFormatting.RED);
                             playerObject.addChatMessage(chatcomponenttranslation1);
                         }
                     }
