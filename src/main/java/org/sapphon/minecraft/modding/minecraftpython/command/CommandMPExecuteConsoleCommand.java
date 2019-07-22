@@ -68,7 +68,7 @@ public class CommandMPExecuteConsoleCommand extends
                     for (int l = 0; l < k; ++l)
                     {
                         EntityPlayerMP entityplayermp = aentityplayermp1[l];
-                        astring[i] = entityplayermp.getCommandSenderName();
+                        astring[i] = entityplayermp.getName();
 
                         try
                         {
