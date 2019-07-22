@@ -72,7 +72,7 @@ public class CommandMPExecuteConsoleCommand extends
 
                         try
                         {
-                            icommand.processCommand(playerObject, astring);
+                            icommand.execute(FMLCommonHandler.instance().getMinecraftServerInstance(), playerObject, astring);
                             ++j;
                         }
                         catch (CommandException commandexception)
@@ -87,7 +87,7 @@ public class CommandMPExecuteConsoleCommand extends
                 }
                 else
                 {
-                    icommand.processCommand(playerObject, astring);
+                    icommand.execute(FMLCommonHandler.instance().getMinecraftServerInstance(), playerObject, astring);
                     ++j;
                 }
         }catch(Exception e){
