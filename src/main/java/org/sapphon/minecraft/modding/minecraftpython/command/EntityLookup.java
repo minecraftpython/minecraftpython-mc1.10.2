@@ -26,7 +26,7 @@ public class EntityLookup {
 			put("cow", EntityCow.class);
 			put("chicken", EntityChicken.class);
 			put("bat", EntityBat.class);
-			put("arrow", EntityArrow.class);
+			put("arrow", EntityTippedArrow.class);
 			put("boat", EntityBoat.class);
 			put("endercrystal", EntityEnderCrystal.class);
 			put("largefireball", EntityLargeFireball.class);
