@@ -9,12 +9,17 @@ import org.sapphon.minecraft.modding.minecraftpython.problemhandlers.JavaProblem
 
 public class EntityWandProjectile extends EntityEgg {
 
+	private static double speed = 1.15;
+
 	public EntityWandProjectile(World par1World, EntityLivingBase par2EntityLivingBase, MagicWand magicWand,
 			boolean isInaccurate) {
 		super(par1World, par2EntityLivingBase);
 		this.wand = magicWand;
 		if (isInaccurate)
 			randomizeVelocity();
+		this.motionX = par2EntityLivingBase.getLookVec().xCoord * speed;
+		this.motionY = par2EntityLivingBase.getLookVec().yCoord * speed;
+		this.motionZ = par2EntityLivingBase.getLookVec().zCoord * speed;
 	}
 
 	private MagicWand wand;
